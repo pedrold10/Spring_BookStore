@@ -19,4 +19,11 @@ public class LivroService {
     public List<Livro> listarLivros() {
         return livroRepository.findAll();
     }
+    public Livro livroPorId(long id){
+        return livroRepository.findById(id);
+    }
+
+    public Livro salvarLivro(Livro livro){
+        return livroRepository.save(livro);
+    }
 }
