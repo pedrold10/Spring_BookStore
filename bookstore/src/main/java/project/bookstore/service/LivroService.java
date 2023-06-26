@@ -26,4 +26,12 @@ public class LivroService {
     public Livro salvarLivro(Livro livro){
         return livroRepository.save(livro);
     }
+    public boolean deletarLivro(Long id) {
+        if (livroRepository.existsById(id)) {
+            livroRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
