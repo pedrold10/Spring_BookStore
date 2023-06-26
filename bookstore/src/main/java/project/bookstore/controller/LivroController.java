@@ -26,15 +26,15 @@ public class LivroController {
     @GetMapping("/livros/{id}")
     public ResponseEntity<Livro> livroPorId(@PathVariable Long id){
         Livro livro = livroService.livroPorId(id);
-        return (livro != null) ? ResponseEntity.ok(livro) : ResponseEntity.notFound().build();
+        return livro != null ? ResponseEntity.ok(livro) : ResponseEntity.notFound().build();
     }
 
-    @PostMapping
+    @PostMapping("/livros")
     public ResponseEntity<Livro> adicionarLivro(@RequestBody Livro livro) {
         Livro novoLivro = livroService.salvarLivro(livro);
         return ResponseEntity.ok(novoLivro);
     }
-    @PutMapping("{id}")
+    @PutMapping("/livros/{id}")
     public ResponseEntity<Livro> atualizarLivroPorId(@PathVariable Long id,
                                                      @RequestBody Livro livroAtualizado){
         Livro livro = livroService.livroPorId(id);
@@ -47,5 +47,11 @@ public class LivroController {
         }
         else
             return ResponseEntity.notFound().build();
+    }
+    @DeleteMapping("/livros/{id}")
+    public ResponseEntity<Void> deletarLivro(@PathVariable Long id) {
+        boolean livroRemovido = livroService.deletarLivro(id);
+
+        return livroRemovido ? ResponseEntity.noContent().build() : ResponseEntity.notFound().build();
     }
 }
