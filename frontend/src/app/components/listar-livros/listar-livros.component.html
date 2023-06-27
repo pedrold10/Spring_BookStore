@@ -1,3 +1,13 @@
-<table *ngIf="livros && livros.length > 0">
-    
-</table>
+
+<div *ngIf="livros && livros.length > 0" class="livros m-5">
+    <div *ngFor="let livro of livros" class="livro-card card ">
+        <img class="livro-card-img card-img-top" src="{{livro.capa}}" alt="" srcset="">
+        <div class="card-body">
+            <h3 class="livro-card-titulo">{{livro.titulo}}</h3>
+            <b>Autor: {{livro.autor}}</b>
+            <p class="livro-card-descricao">{{livro.descricao}}</p>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
