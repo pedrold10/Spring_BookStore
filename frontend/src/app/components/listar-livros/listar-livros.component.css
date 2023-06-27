@@ -1,0 +1,40 @@
+.livros{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+.livro-card {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    transition: transform 1s
+}
+.livro-card:hover{
+    transform: scale(1.02);
+    background-color: black;
+    color: white;
+}
+  
+.livro-card-img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+  
+.livro-card-titulo {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.livro-card-descricao {
+    font-size: 16px;
+    white-space: pre-wrap;
+}
+  
