@@ -1,7 +1,7 @@
 .livros{
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    flex-wrap: wrap;
 }
 .livro-card {
     border: 1px solid #ccc;
@@ -12,15 +12,14 @@
     flex-direction: column;
     align-items: center;
     max-width: 300px;
+    flex: 0 0 calc(33.33% - 10px);
+    margin: 5px;
     transition: transform 1s
 }
 .livro-card:hover{
     transform: scale(1.02);
     background-color: #222222;
     color: white;
-    .livro-card-img{
-        border-radius: 50px;
-    }
 }
   
 .livro-card-img {

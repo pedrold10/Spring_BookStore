@@ -1,0 +1,51 @@
+<div class="container my-5">
+    <h1 class="mb-3">
+        Adicionar novo livro
+    </h1>
+
+    <form #form="ngForm" (ngSubmit)="editarLivro()">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="mb-3">
+                    <label for="inputTitulo" class="form-label">
+                        Titulo
+                    </label>
+                    <input type="text" class="form-control"
+                    id="inputTitulo" name="titulo"
+                    [(ngModel)]="editarLivroRequest.titulo">
+                </div>
+                <div class="mb-3">
+                    <label for="inputAutor" class="form-label">
+                        Autor
+                    </label>
+                    <input type="text" class="form-control"
+                    id="inputAutor" name="autor"
+                    [(ngModel)]="editarLivroRequest.autor">
+                </div>
+                <div class="mb-3">
+                    <label for="inputCapa" class="form-label">
+                        Capa
+                    </label>
+                    <input type="text" class="form-control"
+                    id="inputCapa" name="capa"
+                    [(ngModel)]="editarLivroRequest.capa">
+                </div>
+                <div class="mb-3">
+                    <label for="inputDescricao" class="form-label">
+                        Descricao
+                    </label>
+                    <textarea class="form-control"
+                    id="inputDescricao" name="descricao"
+                    [(ngModel)]="editarLivroRequest.descricao"></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">
+                    Salvar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<router-outlet></router-outlet>
