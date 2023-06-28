@@ -1,14 +1,25 @@
 
 <button routerLink="/new" class="btn btn-primary ml-5 mt-5">Cadastrar livro</button>
 <div *ngIf="livros && livros.length > 0" class="livros m-5">
-    <div class="row">
-        <div *ngFor="let livro of livros" class="livro-card card ">
-            <img class="livro-card-img card-img-top" src="{{livro.capa}}" alt="" srcset="">
-            <div class="card-body">
-                <h3 class="livro-card-titulo">{{livro.titulo}}</h3>
-                <b>Autor: {{livro.autor}}</b>
-                <p class="livro-card-descricao">{{livro.descricao}}</p>
-            </div>
+    <div *ngFor="let livro of livros" class="livro-card card ">
+        <img class="livro-card-img card-img-top" src="{{livro.capa}}" alt="" srcset="">
+        <div class="card-body">
+            <h3 class="livro-card-titulo">{{livro.titulo}}</h3>
+            <b>Autor: {{livro.autor}}</b>
+            <!--p class="livro-card-descricao">{{livro.descricao}}</p>-->
+            <br>
+        </div>
+        <div class="row ">
+            <button class="btn btn-primary" [routerLink]="['/editar', livro.id]">
+                <mat-icon>
+                    edit
+                </mat-icon>
+            </button>
+            <button class="btn btn-danger ml-2" [routerLink]="['/editar', livro.id]">
+                <mat-icon>
+                    delete
+                </mat-icon>
+            </button>
         </div>
     </div>
 </div>

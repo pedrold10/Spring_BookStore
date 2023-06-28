@@ -13,6 +13,10 @@ export class LivrosService {
   baseApiUrl: string = environment.baseApiUrl;
   constructor(private http: HttpClient) { }
 
+  obterLivro(id: Number): Observable<Livro>{
+    return this.http.get<Livro>(`${this.baseApiUrl}/${id}`);
+  }
+
   listarLivros(): Observable<Livro[]>{
     return this.http.get<Livro[]>(`${this.baseApiUrl}`);
   }
@@ -25,8 +29,8 @@ export class LivrosService {
   }
 
 
-  atualizarLivro(id: string, atualizarLivroRequest: Livro): Observable<Livro>{
-    return this.http.put<Livro>(`${this.baseApiUrl}/${id}`, atualizarLivroRequest)
+  editarLivro(id: Number, editarLivroRequest: Livro): Observable<Livro>{
+    return this.http.put<Livro>(`${this.baseApiUrl}/${id}`, editarLivroRequest)
 
   }
 }

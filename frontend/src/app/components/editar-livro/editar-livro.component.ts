@@ -9,7 +9,7 @@ import { LivrosService } from 'src/app/services/livros.service';
   styleUrls: ['./editar-livro.component.css']
 })
 export class EditarLivroComponent {
-  livroAtributos: Livro = {
+  editarLivroRequest: Livro = {
     id: 0,
     capa: "",
     autor: "",
@@ -22,5 +22,31 @@ export class EditarLivroComponent {
     private livrosService: LivrosService,
     private router: Router) {
   
+  }
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe({
+      next: (params) => {
+        const id = params.get("id");
+
+        if(id){
+          this.livrosService.obterLivro(parseInt(id, 10))
+          .subscribe({
+            next: (response) => {
+              this.editarLivroRequest = response;
+            }
+          });
+        }
+      }
+    })
+  }
+
+  editarLivro(){
+    this.livrosService.editarLivro(this.editarLivroRequest.id, this.editarLivroRequest)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(["livros"])
+      }
+    });
   }
 }
