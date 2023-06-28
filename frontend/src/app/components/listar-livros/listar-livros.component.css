@@ -16,15 +16,20 @@
 }
 .livro-card:hover{
     transform: scale(1.02);
-    background-color: black;
+    background-color: #222222;
     color: white;
+    .livro-card-img{
+        border-radius: 50px;
+    }
 }
   
 .livro-card-img {
+
     width: 200px;
     height: 200px;
     object-fit: contain;
     margin-bottom: 10px;
+    transition: border-radius 1s;
 }
   
 .livro-card-titulo {

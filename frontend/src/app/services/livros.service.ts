@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment.prod';
 import { Livro } from '../models/livro/Livro';
 import { Observable } from 'rxjs/internal/Observable';
+import { map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,6 +14,13 @@ export class LivrosService {
   constructor(private http: HttpClient) { }
 
   listarLivros(): Observable<Livro[]>{
-    return this.http.get<Livro[]>(`${this.baseApiUrl}api/livro`);
+    return this.http.get<Livro[]>(`${this.baseApiUrl}`);
+  }
+
+  adicionarLivro(adicionarLivroRequest: Livro): Observable<Livro[]>{
+    return this.http.post<Livro>(`${this.baseApiUrl}`, adicionarLivroRequest)
+    .pipe(
+      map((response: any)=> response.data)
+    )
   }
 }

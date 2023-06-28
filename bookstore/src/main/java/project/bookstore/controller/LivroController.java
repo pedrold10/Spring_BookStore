@@ -9,6 +9,7 @@ import project.bookstore.service.LivroService;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/bookstore")
 public class LivroController {
 
@@ -41,6 +42,7 @@ public class LivroController {
         if(livro != null){
             livro.setAutor(livroAtualizado.getAutor());
             livro.setDescricao(livroAtualizado.getDescricao());
+            livro.setCapa(livroAtualizado.getCapa());
             livro.setTitulo(livroAtualizado.getTitulo());
             livro = livroService.salvarLivro(livro);
             return ResponseEntity.ok(livro);
