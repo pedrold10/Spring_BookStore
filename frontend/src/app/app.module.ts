@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListarLivrosComponent } from './components/listar-livros/listar-livros.component';
 import { AdicionarLivroComponent } from './components/adicionar-livro/adicionar-livro.component';
+import { EditarLivroComponent } from './components/editar-livro/editar-livro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarLivrosComponent,
-    AdicionarLivroComponent
+    AdicionarLivroComponent,
+    EditarLivroComponent
   ],
   imports: [
     BrowserModule,

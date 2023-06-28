@@ -23,4 +23,10 @@ export class LivrosService {
       map((response: any)=> response.data)
     )
   }
+
+
+  atualizarLivro(id: string, atualizarLivroRequest: Livro): Observable<Livro>{
+    return this.http.put<Livro>(`${this.baseApiUrl}/${id}`, atualizarLivroRequest)
+
+  }
 }
