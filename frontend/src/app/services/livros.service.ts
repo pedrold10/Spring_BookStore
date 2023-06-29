@@ -28,9 +28,11 @@ export class LivrosService {
     )
   }
 
-
   editarLivro(id: Number, editarLivroRequest: Livro): Observable<Livro>{
     return this.http.put<Livro>(`${this.baseApiUrl}/${id}`, editarLivroRequest)
+  }
 
+  deletarLivro(id: Number): Observable<Livro>{
+    return this.http.delete<Livro>(`${this.baseApiUrl}/${id}`)
   }
 }

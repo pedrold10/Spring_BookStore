@@ -41,7 +41,11 @@
 
 
                 <button type="submit" class="btn btn-primary">
-                    Salvar
+                    <mat-icon>save</mat-icon><span class="h2"> Salvar</span>                   
+                </button>
+
+                <button class="btn btn-danger ml-2" (click)="deletarLivro(editarLivroRequest.id)">
+                    <mat-icon>delete </mat-icon><span class="h2"> Deletar</span>
                 </button>
             </div>
         </div>
