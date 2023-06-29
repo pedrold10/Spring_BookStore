@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Livro } from '../../models/livro/Livro';
 import { LivrosService } from 'src/app/services/livros.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-livros',
@@ -8,10 +9,14 @@ import { LivrosService } from 'src/app/services/livros.service';
   styleUrls: ['./listar-livros.component.css']
 })
 export class ListarLivrosComponent {
+
   livros: Livro[] = [
   ];
   
-  constructor(private livrosService: LivrosService){}
+
+
+  constructor(private livrosService: LivrosService,
+    private router: Router){}
 
   ngOnInit(): void{
     this.listarLivros();
@@ -26,4 +31,5 @@ export class ListarLivrosComponent {
       }
     );
   }
+
 }

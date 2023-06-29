@@ -49,4 +49,13 @@ export class EditarLivroComponent {
       }
     });
   }
+
+  deletarLivro(id: Number){
+    this.livrosService.deletarLivro(id)
+    .subscribe({
+      next: (response) => {
+        this.router.navigate(["livros"])
+      }
+    })
+  }
 }
