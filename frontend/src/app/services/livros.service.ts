@@ -10,11 +10,14 @@ import { map } from 'rxjs';
 })
 export class LivrosService {
 
+  private livroSelecionado: any;
+  
+
   baseApiUrl: string = environment.baseApiUrl;
   constructor(private http: HttpClient) { }
 
   obterLivro(id: Number): Observable<Livro>{
-    return this.http.get<Livro>(`${this.baseApiUrl}/${id}`);
+    return this.http.get<any>(`${this.baseApiUrl}/${id}`);
   }
 
   listarLivros(): Observable<Livro[]>{
@@ -34,5 +37,13 @@ export class LivrosService {
 
   deletarLivro(id: Number): Observable<Livro>{
     return this.http.delete<Livro>(`${this.baseApiUrl}/${id}`)
+  }
+
+  setLivroSelecionado(livro: any) {
+    this.livroSelecionado = livro;
+  }
+
+  getLivroSelecionado() {
+    return this.livroSelecionado;
   }
 }

@@ -31,5 +31,15 @@ export class ListarLivrosComponent {
       }
     );
   }
-
+  selecionarLivro(livro: any) {
+    this.livrosService.obterLivro(livro.id).subscribe(
+      (livroRetornado) => {
+        this.livrosService.setLivroSelecionado(livroRetornado);
+        //this.router.navigate(['/livros', livro.id]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
 }
