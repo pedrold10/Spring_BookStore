@@ -10,13 +10,15 @@ import { ListarLivrosComponent } from './components/listar-livros/listar-livros.
 import { AdicionarLivroComponent } from './components/adicionar-livro/adicionar-livro.component';
 import { EditarLivroComponent } from './components/editar-livro/editar-livro.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LivroCompletoComponent } from './components/livro-completo/livro-completo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListarLivrosComponent,
     AdicionarLivroComponent,
-    EditarLivroComponent
+    EditarLivroComponent,
+    LivroCompletoComponent
   ],
   imports: [
     BrowserModule,

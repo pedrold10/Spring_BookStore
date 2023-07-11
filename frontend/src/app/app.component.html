@@ -1,9 +1,17 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/">BookStore</a>
+    <a class="navbar-brand" routerLink="/">
+        <div class="logo option">
+            <mat-icon class="custom-icon ">local_library</mat-icon>
+            <p>BookStore</p>
+        </div>
+    </a>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav-bar nav">
-            <li class="nav-item">
-                <button routerLink="livros" class="nav-link link-nav btn btn-link">Listar</button>
+            <li class="nav-item row">
+                <button routerLink="livros" class="ml-5 nav-link link-nav btn btn-link option"><span class="h2">Listar</span></button>
+            </li>
+            <li>
+                <button routerLink="/new" class="ml-5 nav-link link-nav btn btn-link option"><span class="h2">Cadastrar livro</span></button>
             </li>
         </ul>
     </div>
